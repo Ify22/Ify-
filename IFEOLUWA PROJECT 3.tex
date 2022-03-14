@@ -1,0 +1,778 @@
+\documentclass[a4paper, 12pt, openany]{report} 
+%\usepackage[latin1]{inputenc}
+\usepackage{amssymb, amsmath, makeidx,tikz, verbatim, float, graphicx, rotating, longtable}
+\usepackage{amsfonts,amssymb,array,setspace}
+\doublespacing
+\usepackage[hidelinks]{hyperref}
+\usepackage{ragged2e}
+\usepackage{float}
+%\usepackage[none]{hyphenat}
+\renewcommand{\contentsname}{TABLE OF CONTENTS}
+%\renewcommand\bibname{REFERENCES}
+
+
+
+
+\newtheorem{lem}{Lemma}[section]
+\newtheorem{rmk}{Remark}[section]
+\newtheorem{thm}{Theorem}[section]
+\newtheorem{defn}{Definition}[section]
+\newtheorem{ex}{Example}[section]
+\begin{document}
+	\begin{center}
+		\thispagestyle{empty}
+	
+		\textbf{\large{APPLICATION OF GROUP THEORY TO MOLECULAR VIBRATION }}
+		\\[2.5cm]
+		
+		\textbf{BY} 
+		\\[2.0cm]
+		
+		\textbf{\large{FAGBILE IFEOLUWA BOLUWATIFE}} 
+		\\[2.0cm]
+	\textbf{MATRIC NO: 199914}
+	\\ [2.0cm] 
+	
+	\large{\textbf{A PROJECT SUBMITTED TO THE DEPARTMENT OF MATHEMATICS, FACULTY OF SCIENCE, IN PARTIAL FULFILMENT OF THE REQUIREMENTS AWARD FOR THE DEGREE OF BACHELOR OF SCIENCE, B.Sc., OF THE UNIVERSITY OF IBADAN, IBADAN, NIGERIA.  }}
+	\\[2cm]
+		%\textbf{DECEMBER,2021}. 
+	\end{center} \clearpage
+\pagenumbering{roman}
+\addcontentsline{toc}{section}{CERTIFICATION}
+\section*{\begin{center}{CERTIFICATION}\end{center}}
+I certify that this  project work was carried out by \textbf{FAGBILE IFEOLUWA BOLUWATIFE} with matric number, \textbf{199914} of the Department of \break Mathematics, University of Ibadan,under my supervision.
+\\[3.0cm]
+\begin{center}		........................................\\
+	\textbf{Supervisor}\\[0.5cm]
+	Mr O.L OGUNDIPE\\[0.5cm]
+Department of Mathematics\\[0.5cm]
+	 University of Ibadan,\\[0.5cm]
+	 Ibadan, Nigeria.\\\end{center}
+
+\clearpage
+\addcontentsline{toc}{section}{DEDICATION}
+\section*{DEDICATION}
+This work is dedicated to GOD and my wonderful parents.
+
+
+
+\clearpage
+
+\addcontentsline{toc}{section}{ACKNOWLEDGEMENT}
+\section*{ACKNOWLEDGEMENT}
+My most sincere gratitude and heartfelt thanks goes to Almighty God for the major help I received, He has helped me this far and I know He will continue to be. To Him be glory forever and ever (Amen).
+
+I appreciate my mummy Mrs E.O Fagbile for her support, care , prayer and most importantly her advice, that even when I wanted to stop, her personality keeps me moving. I appreciate also my siblings for the extra love and care thay all showed to me during the course of writing this project. God bless you all.
+
+ I have always wanted a teacher as a supervisor and indeed God in His grace granted me one. I really appreciate my supervisor Mr O.L Ogundipe, not just for his support but care and a lot of his uplifting words from the beginning of this project till the end. I say a very big thank you for not  leaving me in the dark but to see the beauty of studying mathematics. There is no day I come to your office, even though most times I might be troubled, yet I never leave the same way no matter what. Thank you very much sir. I pray God answer all your prayers and grant you a good great success in all you do.
+ 
+ I appreciate also my wonderful lecturer Dr Adeyemo, through whom I got the motivation to study on a particular feasible thing mathematics can be applied to. I really appreciate you for your extensive teaching on group theory and exposure to how life is, I will not forget all your wonderful quotes you used to drop for us in class. God bless you sir. I will never forget also my ever patient lecturer, Dr Ogunfolu for all you do, thank you so much ma.
+ 
+ My special thanks goes to Deeper Life Campus Fellowship for their \break support, counsel and prayers during the course of writing this project. I say a very big thank you to Bro Okoro Daniel for inspiring me on writing on a particular molecule which really help me a lot in this project, and for Gbeso Baba for the provision of his laptop computer to complete this project. God bless you.
+ 
+ I acknowledge the efforts of UI-LISA for the training given to me which really helped me during the course of working on my project. Mr Elder Adeniran and Dr Serifat Folorunso, you are indded God-sent to me. God bless you.
+ 
+ Lastly, I appreciate all my classmates, my wonderful projectmates and all Namssnites as a whole. See you all on the mountain top. 
+\clearpage
+ \tableofcontents
+	\pagenumbering{arabic}
+	\clearpage
+		\chapter{INTRODUCTION}
+	\section{DEFINITION AND INTRODUCTION}
+%	\begin{column}
+%\column{0.5\textwidth}
+	Group theory studies the algebraic structures known as groups, which are systems consisting of a set and a binary operation which satisfy certain \break axioms.
+	
+It is also the mathematical application of symmetry to an object, to obtain knowledge about its physical properties, which therefore provides a quick simple method, to determine the relevant physical information of the object.
+	
+ Symmetry group of a geometrical object is the group of transformations under which the object is invariant, endowed with the group operation of composition. Such a transformation is an invertible mapping, which takes the object to itself, and preserves all the relevant structure of the object. A frequent notation for the symmetry group of an object  $X$ is $Sym(X)$.
+	
+	Symmetry group is very important as it has a great relevance in every spheres of life wherever structure and pattern is being considered. It plays a major role when dealing with an object in group theory, geometry, physics, chemistry,art and science  generally.
+	
+	In Biology, symmetry group is used to refer to a correspondence of body parts. It is viewed as a balanced distribution of duplicate body parts or shapes within the body of an organism.
+	
+  Physicists use symmetry to determine the physical or mathematical \break feature of a system that is preserved or remains unchanged under some \break transformation. 
+	
+	The appearance of symmetry in nature uses symmetry  make things \break beautiful. Bilateral symmetry which gives the two halves of an object that are exactly mirror images of each other are often seen daily in nature, thereby creating harmony and balances. Objects like fruits, animals, insects, spiders, flowers etc. are good examples of symmetrical images. 
+		
+	 In Chemistry, it is used in describing the physical properties of molecules as they are being classified by symmetry. Its application is used in getting the orbital molecular tables, describing the energy levels of atoms and molecules, predict any of the molecule's chemical properties such as the dipole moment and spectroscopic transitions and in the study of molecular vibrations.
+	
+	 Scientists regard symmetry breaking to be the process of new pattern \break formation because they help to classify unexpected changes in forms. Through the process of symmetry breaking, new patterns in nature are formed and new structures are  gained as symmetry is lost.
+	 
+	  Despite many applications of symmetry group, this project will be \break restricted to its application in chemistry with respect to the molecular \break vibration of ammonia.
+	
+	In chapter one, the basic concept of group theory, symmetry group, molecules and ammonia (including its properties and uses), and some \break basic definitions of relevant terms  will be introduced as they are required as a fundamental  foundational knowledge for this project, to help the reader to understand the notion of application of symmetry  to ammonia. \\	
+	Chapter two will be a review on literatures and books previously written by authors who have worked  on the topic and topics related to this project before-hand which will give a background knowledge for this project.\\	
+	In chapter three, there will be an extensive presentation on the application of symmetry group to molecular vibration of ammonia. The symmetry group of ammonia will be described, along with its chemical and physical properties  which includes predicting whether it is chiral or polar.\\
+	Chapter four which is the conclusive chapter gives a summary of the project work and recommendations.
+%	\end{column}
+	
+%	\newpage
+	\section{BACKGROUND TO STUDY}
+		Symmetry group has found its way in unifying different things in the world by creating harmony in different disciplines. A lot of work has been down in this area and its relation and its application has been seen so far in group theory, chemistry, biology, physic and other aspects of life.
+	
+	\section{MOTIVATION TO STUDY}
+		Words spoken by Dr Adeyemo in 311 class propelled me to seek at least one feasible thing mathematics can do in the world that men would like to understand beyond the equations (as people do say). Group theory is  applicable to the physical world and it is seen in daily live. How amazing now will it be seeing it being applicable to our own very world starting from molecules (what is believed to form the basic things in the world), chemical compound called Ammonia  will be the major molecule compound to view. Will it not be interesting to see what is applicable to the world to how it is applied to things [molecules] which constitute the world major form/formation.
+	
+	\section{STATEMENT OF THE PROBLEM}
+	This project, will study group theory(symmetry) and its application to \break Ammonia molecule. We will check how symmetry is being applied to \break ammonia in defining and classifying it, and symmetry will be used in \break determining its  molecular vibrations.
+
+	\section{PRELIMINARIES}
+	\begin{defn}\textbf{(Group)}\\A non-empty set say $G$ together with a binary operation $*$ ,denoted by $(G,*)$ is  called a group if it satisfies the following conditions:\\
+		Gp1: for all elements $x\,,y\,,z\in\,G$\quad  $(x * y) * z = x *(y * z)$\\
+		Gp2: there is an element $e \in\, G$ such that for every $x \in\,G$\quad $e*x= x = x *e$\\
+		Gp3: for every  $x \in\,G$, there is a unique element  $y\in\,G$  such that \break $x*y=e=y*x$.\\
+		Gp1 is usually called the associativity law. The $e$ in Gp2 is  called the identity element of $(G,*)$. In	Gp3, the unique element $y$ associated to $x$ is called the inverse of $x$ and denoted as $x^{-1}$\end{defn}
+	\begin{rmk} If in addition to the above properties, commutativity law holds i.e for every pair of elements $x,y\,\in\,G$,\, $x*y=y*x$ then  $(G,*)$ is an abelian group.\end{rmk}
+%	\begin{ex}	\begin{itemize}	\item [i.]$(\mathbb{R},*)$  is a group with $i=0$ and $x^{-1}=-x$\quad$\forall\,x \in \mathbb{R}$	\item[ii] For matrix, $(GL_2(\mathbb{R}),*)$ is a group with $$i=\begin{bmatrix}	1&0\\0&1\end{bmatrix}=I_2$$ and $$\begin{bmatrix}a&c\\b&d\end{bmatrix}^{-1}=\begin{bmatrix}	\frac{d}{ad-bc}&\frac{-b}{ad-bc}\\\frac{-c}{ad-bc}&\frac{a}{ad-bc}\end{bmatrix}$$ \end{itemize}\end{ex}
+		
+	\begin{defn}\textbf{(Order of a Group)}\\If a group has an underlying set $G$, then the number of elements in $G$ is called the order of $G$ and it is denoted by $|G|$ \end{defn}
+	\begin{rmk} If $|G|<\infty$, it is said to be finite, otherwise  infinite i.e \break $|G|=\infty$ .\end{rmk}
+	\begin{defn}\textbf{(Subgroup)}\\
+		Let $(G,*)$ be a group and $H$ a subset of $G$ i.e  $H\subseteq\;G$ . Then, $H$ is a subgroup of $G$ if $(H,*)$ is a group and  it is denoted by $H\leq\;G$. $H<G$ means that $H$ is a subgroup but not equivalent to $G$\end{defn}
+	\begin{rmk}Identity $(e)$ and $G$ itself are trivial subgroups of $G$ while \break others are non-trivial subgroups.\end{rmk}
+	\begin{thm}\textbf{(Generator)}\\
+		let $G$ be a group, for any $g \in G$, the subset\\ $$<g>=\{g^n|n\in\;Z\}\subseteq\;G$$ i.e $<g>$ $G$.\\Where $$g^n=\begin{cases}
+		g*g*g*\cdots*g \hspace{0.5cm}&\mbox{if $n>0$}\\(g^{-1})^{-n}\hspace{0.5cm}& \mbox{if $n<0$}\\e\hspace{0.5cm}&\mbox{if $n=0$}
+		\end{cases}$$\end{thm}
+	\begin{rmk}The subgroup $<g>$ defined is known as the cyclic subgroup of $G$ generated by $g$\end{rmk}
+	\begin{defn}A group $G$ is called a cyclic group if $\exists\;g\in\:G$ such that $$G=\{g^n:n\in\;Z\}\hspace{0.5cm}\mbox{or\hspace{0.3cm}$G=<g>$}$$
+\end{defn}
+\begin{rmk}"$g$" above is called the generator of $G$. If there is an $n>0$ such that $g^n=e$, then $g$ is said to have a finite order, otherwise $g$ has an infinite order. \end{rmk}
+\begin{ex}Let $U(8)$ be the set of positive integers less than $8$ such that the elements are relatively prime to $8$. Then, the group $$(U(8),\cdot)=\{1,3,5,7\}$$ $U(8)$ is not cyclic since every element is its own inverse and no element generates all of $U(8)$\end{ex}
+
+
+	\section{SYMMETRIC GROUP(PERMUTATION GROUP)}
+	\begin{defn}\textbf{(PERMUTATION)}\\ let $X$ be a finite set, the set of all bijections $\alpha:X\rightarrow\;X$ is known as permutations\end{defn}
+	\begin{defn} Let $P(X)$ be the set of all permutation on a set $X$. Then, 
+	$(P(X),o)$ is a group where\\\begin{center}$o$= composition of 
+functions\\$e$= $edx=$ the identity function on $X$.\\$\alpha^{-1}$= the inverse function of $\alpha$.\end{center}
+		The group is  called the \textbf{Symmetric group} of $X$\end{defn}
+	\textbf{Notation}\\Considering the standard set with finite elements $n$ i.e $X=\{1,2,\cdots,n\}$, we write $S_n$ for the symmetric group of $X$. A permutation $\alpha\in\;S_n$ can be represented in two ways
+	\begin{itemize}
+		\item [i.] The matrix notation \item [ii.] The cycle notation\end{itemize}
+	\textbf{Matrix notation}\\ The first row of the matrix is used to denote values in the domain while the second row depicts the image of the values in the domain. i.e
+	$$\begin{pmatrix}1&2&3&\cdots&n\\\alpha(1)&\alpha(2)&\alpha(3)&\cdots&\alpha(n)\end{pmatrix}$$
+	\begin{ex}$\alpha\in\;S_5$ gives $$\alpha=\begin{pmatrix}1&2&3&4&5\\2&4&1&5&3\end{pmatrix}$$ and it means $\alpha$ is a function such that $\alpha(1)=2$, $\alpha(2)=4$, $\alpha(3)=1$, $\alpha(4)=1$, $\alpha(5)=3$.\end{ex}
+	\textbf{Cycle Notation}\\ We say that a permutation $\alpha\in\;S_n$ is a $k$-cycle if there are integers $p_1,p_2,\cdots,p_k$ such that\\ $$\alpha(p_1)=p_2, \alpha(p_2)=p_3, \cdots\alpha(p_{k-1})=p_k, \alpha(p_k)=p_1$$We write $\alpha=(p_1,p_2,\cdots,p_k)$
+	\begin{defn} A permutation $\alpha$ has disjoint cycle if it can be written in the form $\alpha=(p_1,p_2,\cdots,p_k)o(q_1,q_2,\cdots,q_l) o\cdots\;o(r_1,r_2,\cdots,r_m)$\end{defn}
+	\begin{ex}$$\alpha=\begin{pmatrix}1&2&3&4&5\\3&5&4&1&2\end{pmatrix}$$ can be represented as $(1,3,4)(2,5)$\end{ex}
+\begin{defn}A transposition is a cycle of length 2.\end{defn}
+	\begin{rmk}Any cycle is a product of transposition i.e if $\alpha=(p_1,p_2,\cdots,p_k)$, it can be decomposed into:$$(p_1,p_2,\cdots,p_k)=(p_1,p_k)(p_1,p_{k-1})\cdots,(p_1,p_2)$$\end{rmk}
+	\begin{thm}Every permutation $\alpha\in\;S_n$ can be expressed as a composition of transpositions.\end{thm}
+	\begin{ex}\label{1.6.3} For $\alpha\in\;S_5$ \begin{align*}\alpha=(1,2,3,4,5)&=(1,5)(1,4)(1,3)(1,2)\\&=(4,5)(3,5)(2,5)(1,5)\\&=(2,1)(2,5)(2,4)(2,3)\\
+		\end{align*}\end{ex}
+	\begin{rmk} Decomposition into product of transposition is not unique\end{rmk}
+%\begin{defn}A permutation is said to be even if the number of \break transposition in its transpose decomposition is even otherwise, it is odd.\end{defn}
+%\begin{ex}(1,2,3,4,5) is even as seen in \ref{1.6.3} above.	\end{ex}\begin{defn}The group of all even permutations is a subgroup of the symmetric group and is called the alternating group, denoted by $A_n$	\end{defn}
+\begin{thm}
+	The symmetric group of n objects $S_n$ has order $n!$ i.e \break $|S_n|=n!$
+\end{thm}
+
+
+
+	\section{SYMMETRY} Symmetry is defined as a proportionate and balanced similarity that is found in two halves of an object, that is one-half is the mirror image of the other half. In geometry, object is symmetrical if it is equal on both sides when a central dividing line (mirror line) is drawn on it.
+	
+	Symmetry is a pattern classification scheme. It is a fundamental part of geometry, nature and shapes. It creates pattern that help us organize our world. It does not only occur in geometry but in every other branches of mathematics. For an object in a metric space, its symmetries form a subgroup of the isometry group of the working space. Given an object structure $G$ of any sort, where $G$ is a set with no additional structure, a symmetry is a bijective map from a set to itself and thereby giving rise to permutation group.
+	
+	In group theory, the symmetry group of a geometric object is the group of all transformations under which the object is invariant endowed with group operation composition. Therefore, symmetry is a mirror image in the sense that one shape is identical to other shape when it is moved, rotated or flipped. If an object does not have symmetry, we say the object is asymmetrical.
+		
+	\begin{defn} A geometrical object $G$ is said to possess a symmetry if there is an operation or transformation (say composition) that maps the \break object onto itself such that the object is invariant under the transformation.\end{defn}
+	\begin{defn}\textbf{Invariance}\\
+		A property that a mathematical object remains unchanged(fixed or constant) under a set of operation or transformation is called the invariant property.	\end{defn}
+	\begin{defn}\textbf{(Symmetry operation)}\\
+		 A symmetrical operation is an action that leaves an object looking the same after it has been carried out. It can also be referred to as transformations such as identity, reflection, inversion, proper and improper rotations.\end{defn}
+	\begin{defn}\textbf{(Symmetry element)}\\
+		 A symmetry element is a geometrical entity about which a symmetry  operation is performed. It can be a point(one dimension), axis(two  dimensions) or plane(three dimensions and so on).\end{defn}
+	\begin{defn}\textbf{(Line of symmetry)}\\
+		An imaginary axis or line along which a geometric object can be folded to obtain the symmetrical halves is called a line of symmetry. It divides an object into two identical pieces. For example, the diagonal of a square divides it into two equal halves and it is referred to as the line of symmetry for a square.\end{defn} The basic types of line of symmetry are the vertical and horizontal line of symmetry. An object can have one,two three or more line of symmetry as shown in the figure below.
+	
+		  	\begin{figure}\centering\includegraphics[width=3in]{img9}
+			\caption{An equilateral triangle has 3 lines of symmetry}
+		\end{figure}
+		
+\begin{figure}\centering\includegraphics[width=3in]{img10}  	\caption{A square has 4 lines of symmetry}
+\end{figure}
+	\begin{figure} \centering\includegraphics[width=3in]{img11} \caption{A circle has  infinite line of symmetry}
+\end{figure}
+	
+	\begin{rmk}
+		 \begin{itemize}
+			\item [i.]Geometric objects have different types of symmetry which depends on the set of transformations, and the invariant property of such an object after transformation.
+		\item[ii.]Composition of two transformation is a transformation (closure and associativity property), and every transformation has inverse transformation (inverse property), which therefore shows that the set of transformations under which an object is symmetric forms a  mathematical group called the symmetric group of the object.
+	\item[iii.]Some geometrical objects are more symmetric than others especially the \linebreak regular ones. For example, a square is more symmetric than every other quadrilaterals.
+	\end{itemize}
+ \end{rmk} \newpage
+Below, are the examples of symmetrical objects with their lines of \break symmetry.
+
+\begin{figure}[H] \centering\includegraphics[width=5in]{img26}  \end{figure} 
+\begin{figure} [H]\centering\includegraphics[width=5in]{img262}  \end{figure} 
+\begin{figure}[H]\centering \includegraphics[width=5in]{img263}  \end{figure} 
+
+	
+\subsection*{Types of Symmetry}
+	There are four types of symmetry that can  be observed in various cases\\
+	\begin{itemize}\item [(1.)] Translation Symmetry
+		\item [(2.)] Rotation Symmetry 
+        \item [(3.)] Reflection Symmetry 
+        \item [(4.)] Glide Symmetry \end{itemize}
+	
+	\subsubsection*{TRANSLATION SYMMETRY} 
+	Translation Symmetry occurs when an object has undergone a movement, shift, or slide in a specified direction, through a specified distance without any rotation or reflection, and the object with its distance remain unchanged.
+	$$A=\{x+t\:|x\in\;A\}$$
+%\begin{center} \includegraphics[width=5in]{img17} \hspace{0.05cm} \end{center} 
+  \begin{figure}[H] \centering\includegraphics[width=5in]{img18}	\caption{Figure showing the translation of an object $A$ by distance $t$}
+\end{figure}
+In geometry, to translate an object is to move it from one place to another \linebreak without rotating it. As shown in the above figure, a translation or slide of an \linebreak object $x$ by $t$ : $T_t(x)=x+t$. \\
+ Translational symmetry are used to make patterns and it occurs in many \linebreak man-made objects like rugs, bricks, tiles etc. It is a characteristic of infinite patterns which can either be discrete or continuous. Therefore, an object has translational symmetry if a translation is performed on it and the object appears unchanged.
+ 
+ 
+	\subsubsection{ROTATION SYMMETRY}
+	Rotation symmetry is also known as radial symmetry(in biology). A shape or object has a rotation symmetry when it still looks the same after some rotation (of less than one full turn). A figure has a rotation symmetry if it can be rotated by an angle between angle $0^o$ and $360^o$ so that the image coincides with the pre-image.\\ The angle of rotation symmetry is the smallest angle for which the figure can be rotated to coincide with itself while the order of symmetry is the number of times the figure coincides with itself as its rotates through $360^o$. An object degree of rotation symmetry (order) is the number of distinct \break orientations in which it looks exactly the same for each rotation. Regular polygons above have rotational symmetry e.g Square. Generally, the degree (order) of rotation symmetry equal to $\frac{360}{n}$, $n$ being the number of sides.\\
+	Below, is an example of of a regular hexagon which has a rotation \break symmetry with order $6$ and $60^o$ angle of rotation and a scalene triangle with no rotational symmetry. 
+	
+	%diagram
+	%\textbf{Rotation is about an internal object /axis while revolution is about another object}\\
+	
+		\begin{figure}[H] \centering \includegraphics[width=5in]{img19} \hspace{0.05cm} \end{figure} 
+	
+	 \subsubsection*{REFLECTION SYMMETRY}
+	 Reflection symmetry is also known as line, mirror, mirror-image symmetry with respect to reflection . It is when a shape or pattern  of an object is reflected in a line of symmetry (a mirror line) such that the reflected shape is exactly the same as the original, and the same distance from the mirror line and the same size; i.e one half of the object reflects the other half of the object. For example, butterfly, fish, heart, scalene triangle, rectangle, square, parallelogram, regular hexagon, human faeces, etc., all have reflection symmetry. In 2D, there is a line or axis of symmetry while in 3D a plane of symmetry. Here, the line of symmetry splits the shape in half and those halves are identical. The examples below shows reflection symmetry.
+%	\begin{center} \includegraphics[width=5in]{img20} \hspace{0.05cm} \end{center} 
+%	\begin{center} \includegraphics[width=5in]{img21} \hspace{0.05cm} \end{center} 
+\begin{figure}[H] \centering \includegraphics[width=5in]{img22}  \end{figure} 
+\begin{figure}[H] \centering \includegraphics[width=5in]{img25}  \end{figure} 
+	 
+	 \subsection*{GLIDE REFLECTION SYMMETRY}
+	 In geometry and crystallography, a glide plane (or transflection) is a \break symmetry operation describing how a reflection in a plane followed by a transition parallel with that plane, may leave the crystal unchanged.\\
+	 In 2 -dimensional geometry, a glide reflection is a symmetry operation that consists of a reflection over a line and then transformation  along that  line combined into a single operation. A glide reflection is commutative in the fact that reversing the direction of the composition will not affect the \break outcome. It does not matter whether one glides first  and then reflect or reflect first and then glide. An example is the diamond glide plane which features in the diamond structure. The diagrams below shows a glide \break reflection.
+	 
+	\begin{figure}[H] \centering \includegraphics[width=5in]{img27} \hspace{0.05cm} \end{figure} 
+	\begin{figure}[H] \centering \includegraphics[width=5in]{img28} \hspace{0.05cm} \end{figure} 
+	 
+	 \begin{rmk}There are still many types of symmetry since its application  is very wide.There are other types like Helical  symmetry, radical \break symmetry, bilateral symmetry, Euclidean symmetry, double rotation \break symmetry, and asymmetry in biology etc.
+	  	\end{rmk} 
+	 
+	 	
+	 		\section*{SYMMETRY IN ABSTRACT ALGEBRA}
+	 	Symmetric groups also known as permutation groups denoted as $S_n$ on a finite set of $n$ symbols is a self bijective map of a finite set (to itself) which forms a group under the composition operation. Since there are $n$ possible permutations of a set of $n$ symbols, it follows that the order (i.e the number of elements) of the symmetric group $S_n$ is $n!$.
+ 	If $X_n$ has $n$ elements $\{1,2,\cdots,n\}$, then the set $\{\sigma: X_n\rightarrowtail\;X_n: \sigma$ is bijective\} has a group structure by composition, say  $\{\sigma_1\:o\:\sigma_2: X_n\rightarrowtail\;X_n\}$ is a symmetric group.
+ 		
+ 		\begin{defn}\textbf{Symmetric Polynomials}\\
+ 			A symmetric polynomial is a polynomial $P(X_1,X_2,\cdots, X_n)$ in $n$ variables, such that if any of the values are interchanged, one obtains the same \break polynomial.\\Formally, $P$ is a symmetric polynomial if for any permutation $\sigma$ of the \break subscripts $1,2,\cdots, n$, one has
+ 			 $$P(X_{\sigma(1)},X_{\sigma(2)},\cdots,X_{\sigma(n)})=P(X_1,X_2,\cdots, X_n)$$\end{defn}
+%\begin{defn}\textbf{Symmetric Vectors}\\\end{defn}
+ 	
+ 
+ \section{MOLECULES}
+ 
+ A molecule is a neutral group of two or more atoms held together by chemical bonds. It forms the smallest identifiable unit into which a pure substance can be divided and still retain the composition and chemical properties of that substance.\\
+ Atoms consist of a single nucleus with a positive change surrounded by a cloud of negatively charged electrons. When atoms approach one another closely, the electron clouds interact with each other and with the nuclei. If this interaction is such that the total energy of the system is lowered, then the atoms bond together to form a molecule. Thus, from a structural point of view, a molecule consists of an aggregate of atoms held together by valence forces. \\
+ There are different types of molecules, which includes diatomoic molecules (2 atoms) and polyatomoic molecule (more than 2 atoms) and  Polymers (many atoms). For diatomoic molecules, two atoms are chemically bonded; if these two atoms are identical, for example, the oxygen molecule($O_2$), they compose a homonuclear diatomic molecule, while if the atoms are different as in the carbon monoxide molecule(CO), they make up heteronuclear diatomic molecule. Polyatomoic molecules includes carbondioxide ($CO_2$) and water ($H_2O$) etc.  Polymers may contain many thousands of component atoms. Molecules also can be classified based on the element, compound and their mixture. $H_2O$ (WATER), Nitrogen ($N_2$), Ozone($O_3$), $NaCl$(table salt) are all examples of molecules.
+ \newpage
+% We have the Linear molecules and the non- linear molecules.
+ \begin{defn}\textbf{linear molecule }\\
+ 	Linear molecule is a molecule in which atoms are deployed in a straight line (under $180^o$ angle). Examples are water ($H_2O$) and Carbon dioxide $(CO_2)$ etc.
+ 	 \end{defn} 
+ \begin{defn} \textbf{Non-linear molecules}\\
+ 	Non- linear molecules are compounds that have a geometry other than linear molecules; i.e their atoms are not arranged in a straight line and are therefore not linear. Examples are hydrogen cyanide, ammonia, etc. 	
+ \end{defn}
+	\section{AMMONIA}
+	Ammonia is an inorganic compound composed of a simple nitrogen atom covalently bonded to three hydrogen atoms.
+	%that is an amidose inhibitor and neurotoxin.
+		It is an hydride of nitrogen and a very important chemical industry. In nature, it is produced when nitrogenous matter decays in the absence of air. The decomposition may be brought about by heat or putrefying bacteria. As a result, small traces of ammonia may be present in the air. However, because of its great solubility in water, it rapidly dissolves in rain water and finds its way into the soil where it may be converted into other compounds.
+	
+	Ammonia is an important molecule because of its abundance both on earth as well as in the atmospheres of the outer planets, Jupiter and Saturn. Knowing its detailed ro-vibrational energy level structure, the  planetary  atmospheric temperatures could be determined.
+	
+	Ammonia is a colourless gas and is characterized with a choking smell of which in large quantities is poisonous as it affects the respiratory muscles. It is used as reducing agents with chlorine and copper(II) oxide and reacts with   carbon (IV) oxide to produce urea which is an important inorganic compound too. When decomposed at temperatures above $500^oC$  by prolonged sparking, it yields nitrogen and hydrogen. It also serve as a base and reacts with acids to produce ammonium salts.
+	
+	It is useful in numerous ways. Aqueous ammonia is used in softening temporarily hard water and are also used in laundries as a solvent for ed as refrigerant before it is being replaced by a less toxic and unreactive fluorocarbons.
+	
+	It is a very useful compound in the laboratory in the  manufacture of nitrogeneous fertilizers like ammonium trioxonitrate(v) (which is used as  fertilizer like nitrochalk and in making explosives like amatol and ammonal), ammonium tetraoxosulphate (VI) (is used as fertilizer and in concentrated form, a weed killer).
+	
+	\chapter{LITERATURE REVIEW} 
+	 Galois in his goal was to find a criterion for deciding whether a given \break polynomial is solvable by radicals or not, came up with a new algebra \break structure named groups. He introduced groups to study symmetries that \break exist between the roots of polynomial. Augustine Loius Cauchy and \break Galois publication in 1846 modified the theory to be what is known as group theory. Permutations of the roots of a polynomial of degree $5$ which was \break discovered earlier by Lagrange and Abel was used, and his result was that there is a group $G_f$ of permutations of the roots of polynomial $f$ such that every expression in the roots that are invariant under these permutations is \break rational (i.e lies in $\mathbb{Q}$) and every expression in the roots that is rational invariant under these permutations. 
+	
+	Euglene Wigner(1931), claimed that the wave functions of an atom are linear combinations of a finite number of the energy level states (state vectors) of the atom, and vice-versa when rotated. He determined the transformation matrix of the original state vectors and a unique constant factor.
+	
+	In 1935,  Bright Wilson described the standard method of group theory to \linebreak determine the wave functions of molecules, which were expressed as a linear combinations of the molecules products. The number of linear combinations were found to have correct symmetry with respect to the permutations of identical atoms, which are equivalent to the rotations of the molecules.
+	
+	Sir John Leonard-Jones in 1949 showed that, the fundamental  equation which must be satisfied by molecular orbitals of a molecule can be transformed to others which involve set of equivalent functions by the method of group theory. These transformations are associated with  equivalent orbitals, which have the property of being identical as regards their  distribution in space, and differ only in the orientation.
+	
+    In 1963, Hugh C Longuet-Higgins used the symmetry group as the set of all feasible permutations and permutation-inversions, which simultaneously invert the coordinates of all particles in the center of mass of a molecule, thereby determining the electronic states of such molecules.
+	
+    Knox RS (1966) in his journal used symmetry to show that the number of odd and even modes of crystals are equal. He showed that the relative number of normal modes of point symmetry type $\Gamma a$ in a macroscopic lattice is $n^2a/g+O(N-13)$ where  $N$ is the number of cells in the lattice n, a is the dimension of $\Gamma a$, and $g$ is the order of the symmetry group and in his addition to providing a count of specific modes, he shows that one should expect a crystal with inversion symmetry thereby showing that the number of odd and even nodes are equal (within the terms of order $N-13$)
+	
+	Woodman CM (1970) agreed with Hugh (1963) by using symmetry for \linebreak non-rigid molecules, which is as a result of internal rotation about one or more axes. The symmetry group was therefore written as a semi-direct product of an invariant torsional subgroup, which is a direct product of cyclic group of the frame when undergoing internal rotation.
+	
+	In 1973, Papoušek, Stone JMR and Spirko used a new model \break Hamilton to study the vibration-inversion-rotation energy levels of ammonia. The inversion motion is removed from the vibrational problem by allowing the molecular reference  configuration to be a function of large amplitude \break motion coordinate. Hougen, Bunk and John (HBJ) method for the study of \break triatomic molecules are also used: symmetry classification of ammonia states were also discussed.
+	
+	Issac PMC in 1975,used symmetry in determining the modes of wave guides, exact information concerning mode classification were also provided. Degeneracy of the minimum waveguide which completely determine the mode class were alsoh discussed.
+	
+	James Worman J, Ronald Atkins L, David Nelson A (1978) wrote on how symmetry can be used to determine whether certain electronic transitions which are exhibited by compounds are allowed or forbidden.
+	
+	In 1983, Dušan Papoušek also applied the HBJ Hamiltonian to molecules and focuses more on ammonia. The potential functions of ammonia is \break obtained in the approximation of rigid invertor (harmonic) and non-rigid invertor (anharmonic) which are compared from the point of view of their isotopic invariancy 
+	
+	DD Nelson Jr, W KLemperer (1987) wrote on how symmetry properties of $NH_3$ dimmer,predicting its tunelling states. The method of group theory is used to predict the picture of ammonia if certain rotations are larged compared to the tunelling matrix element.
+	
+	December 1989, L Martin and P Winternitz in their publication used the algebra of symmetry group of three-wave resonant interaction system in $3$ (or more) space dimensions is shown to be infinite-dimensional and to have the structure of the direct sum of three kac-moody virasoro $\hat{u}(1)$ algebras. The symmetry group is then obtained and its one and two dimensional subgroups are used to perform symmetry reduction thereby producing a wide range of new solutions and his methods are thereby applicable to any system of partial differential equation with an infinite-dimensional symmetry group. 
+	
+	Jean Brocas in 1995 studies ammonia under non-rigid molecules.Ammonia inversion is being considered and it is shown that there is a splitting line in the rotation and vibration spectra of ammonia. Inversion and internal \break rotation are taken to be the two feasible transformations under the study of these non-rigid molecules.
+	
+	Roy Weeney (2002) showed the importance of symmetry group by using \linebreak symmetry operation which leaves objects unmoved (unchanged). This thereby forming a point group and their orthogonal transformations in addition to the space groups. The quantities which are not invariant may have physical importance but those which are invariant have simpler cnsequences.
+	
+	In 2005, Sergei N-Yurchekell, Miguel Carjaval, Perjensen, Hailinl-Jinging Zheng Walter also studied the vibrational motion of $XY_3$ molecules based on HBJ appproach. The rotation-vibration Schrodinger equation of the molecules are solved. 
+	
+	Richard Powell (2010) also demonstrated the importance of symmetry in \linebreak determining the properties of solids. The effects of translational symmetry on electronic energy bonds in solids was also discussed.
+	
+	Lev Chuntonov, Gilad Haran in 2011 discovered that the excitation modes of artificial plasmonic molecules obey group theory rules, and are defined by symmetry, so also the conventional molecules.
+ 	
+ 	In 2012, Jaan Laane, Esther Ocola J. apply symmetry and   mathematical group theory as a tool to investigate the vibrations of molecules. The \break symmetry operations are used to compare groups and to determine the point groups of the molecules. Properties of character tables and the method for obtaining a reducible representation for all the motions of a molecule was also discussed.\,The irreducible representation which contains the symmetry species of the individual vibrations, determination of symmetry adapted \break linear  combinations are also outlined and the basis for the spectroscopic \break selection rules are thereby presented. The matrix algebra along with \break symmetry concepts were used to simplify calculations of the molecular force constants.
+ 	
+ 	Alan Vincent(2013) in the second edition of his book used the projection operator method, to calculate the form of the normal modes of vibration of a molecule and the normalized wave functions of molecular orbitals
+ 	
+ 	AV Burenin (2014) agreed with DD Nelson and WKlemper (1987) by using the methods of a symmetry groups in the construction of the total classification of energy levels of ammonia dimmer $(NH_3)_2$. The torsional exchange and its inversion non-rigid motions were also discussed. 	
+ 	
+ 	In 2015, Obaid R. and Leibscher M. used symmetry to deduce the global irreducible representations of the electronic states and transition dipole \break moments of molecules, constructing thereby the resulting symmetry adapted transition dipole functions.
+ 	
+ 	Ahmed S. Abdel-Rahman (2019), used 	group theory character table as a tool to get important information about molecular activities and spectra properties of a molecule. On his way to define the infrared spectra, r1aman spectra and natural frequency of molecules; the degenerate states of molecules are splitted, and the motion of each atom through molecular vibration was determined. 
+ 	
+ 	Jan Smykde, Attila G.C Saszar in 2021 studied the structure of the \break excited vibrational wave functions of the ammonia molecule. Following from a generalize reduced-density-matrix based vibrational assignment \break algorithm, characterization of the complex dynamics of the system with \break several degenerated vibrations were considered. Symmetry-based approach was therefore switched over to  predict directly the state degeneracy and the relations between the degenerate modes.
+
+
+	
+	\chapter{APPLICATION OF SYMMETRY TO AMMONIA}
+	\section{INTRODUCTION}
+	Knowing the symmetry of a molecule provides a information about its \break chemical and physical properties. Considering Ammonia $(NH_3)$ molecule, this section will  provide its symmetry, show that it forms a group, write out its tranformations in matrix form, construct its character table and thereby find the its vibrational modes.
+	\section{DEFINITION OF RELEVANT TERMS}
+	\begin{enumerate}
+		\item \textbf{Symmetry operation :} This is an action (transformation) that leaves an object looking the same after it has been carried out. It includes rotations, reflections and inversions.
+		\item \textbf{Symmetry elements :} It consists of all points that stay in the the same place when a symmetry operation is performed. It can be an axis, plane or point with respect to which symmetry operation is carried out. For each symmetry operation, there corresponds a symmetry element. The following are symmetry elements a molecule may possess.
+		\begin{itemize}
+			\item \textbf{E - identity :} The identity operation consists of doing nothing and the corresponding symmetry element is the entire molecule.
+			\item \textbf{$C_n$ - an n- fold axis of rotation :} Rotation by $\frac{360^o}{n}\left(\frac{2\pi}{n}\right)$ is the degree of rotation of the molecules. Some molecules have more than one $C_n$ axis, therefore the one with the highest value of $n$ is called the principal axis.
+			\item \textbf{$\sigma$ - a plane of symmetry :} Reflection in the plane leaves the molecule looking the same. A vertical mirror and horizontal mirror plane \linebreak denoted as $\sigma_v$ and $\sigma_h$ respectively are used for a molecules that has axis of symmetry; $\sigma_d$ called the dihedral mirror plane is a vertical \linebreak mirror plane plane that bisects the angle between two $C_2$ axes.
+			\item\textbf{i - center of symmetry :} Inversion through the center of \break symmetry leaves the molecule unchanged. It consists of passing each point through the center of inversion and out to the same distance on the other side of the molecule.
+			\item\textbf{$S_n$ - an n-fold improper rotation axis :} It is also called \linebreak rotary-reflection axis and it consists of rotating an angle through $\frac{360^o}{n}$ about the axis followed by reflection in a plane perpendicular to the axis. $S_1$ is reflection and $S_2$ is inversion.
+		\end{itemize}
+	\item\textbf{Symmetry point groups :} This is the group of symmetry elements present in a molecule. There is at least one point in space that remains unchanged no matter which symmetry operation from the group is applied. Following the schoenflies notation, the following are molecular point groups: \begin{itemize}
+		\item \textbf{$C_1$ -} Contains only identity ( a $C_1$ rotation by $360^o$ is the same as identity E)
+		\item \textbf{$C_i$ -} contains the identity E and a center of inversion
+		\item \textbf{$C_s$ -} contains the identity E and a plane of reflection $\sigma$
+       	\item \textbf{$C_n$ -} contains the identity and an n-fold axis of rotation
+       	\item \textbf{$C_{nv}$ -} contains the identity, an n-fold axis of rotation, and a vertical mirror planes $\sigma_v$.	
+       	\item \textbf{$C_{nh}$ -} contains the identity, an n-fold axis of rotation, and a vertical mirror planes $\sigma_h$.
+       	\item \textbf{$D_n$ -} contains the identity, an n-fold axis of \break rotation,n 2-fold rotations about axes perpendicular to the \break principal axis.
+       	\item \textbf{$D_{nh}$ -} contains the same symmetry elements as $D_n$  with the \break addition of horizontal plane.
+       	\item \textbf{$D_{nd}$ -} contains the same symmetry elements as $D_n$ with the \break addition of $n$ dihedral mirror planes.
+       	\item \textbf{$S_n$ -} contains the identity and one $S_n$ axis. Molecules only belong to $S_n$  if they have not already been classified in terms of one of the preceding point groups.
+	\end{itemize}
+	\end{enumerate}
+In any symmetry operation on ammonia ($NH_3$), the nitrogen atom is fixed but the hydrogen atoms can be permutated in $3!=6$ ways. The axis of the molecule is called a $C_3$ axis, since it can be rotated about into $3$ equivalent \break orientations, $120^o$ apart. Recall that a molecule with a $C_n$ axis has $n$ \break equivalent orientations, separated by $\frac{2\pi}{n}$ radius, and the axis of its \break highest symmetry is called the principal axis. Now, three vertical mirror planes denoted as $\sigma_v$, $\sigma'_v$, $\sigma_v^{''}$ run through the  principal axis in ammonia.\\ Therefore, Ammonia belongs to he symmetry point group called $C_3v$,\break  characterized by a 3-fold axis with three vertical planes of symmetry.
+    
+   The symmetry operations carried out on a molecule must not change its physical property. So, we check whether a molecule is polar or chiral based on it symmetry group.
+    \begin{itemize}
+    	\item For a molecule to be chiral (i.e they can not be superimposed on their \linebreak mirror-image), it must have the rotation-reflection axis ($S_n$) which can be implied by other symmetry elements in a group. e.g a point group with $C_n$ and $\sigma_h$ as elements will have $S_n$ , so also a center of inversion which is equivalent to $S_2$.
+    	
+    	Since $NH_3$ does not have any of these property i.e $S_n$ is not an element for its symmetry operation, therefore it is not chiral.
+    	
+    	\item For polarity, the molecule have a permanent dipole moment, and an \linebreak asymmetric charge distribution. The point group of the molecule does not only determines whether the molecule may have a dipole moment, but also in which direction(s) it may point. If the point group of a molecule contains any symmetry operation, that would interchange the two ends of	the molecule, such as a $\sigma_h$ mirror plane or a $C_2$ \break rotation perpendicular to the principal axis, then there cannot be a
+    	\break dipole moment along the axis. Therefore for polarity, a dipole moment 
+    	must not lie perpendicular to the axis of rotation. For molecules with  $C_n$  $n>1$, this is satisfied. So,the only groups compatible with a dipole moment are $C_n$, $C_{nv}$ and $C_s$.
+    	
+    	Since ammonia $NH_3$ belongs to the $C_3v$ point group, with $n=3$, the dipole moment lie parallel to the axis of rotation, thereby making ammonia polar.
+    \end{itemize}
+Now, we will compute the symmetry group of ammonia;\\
+Let the orientation of the three hydrogen atoms in the figure below be \break represented as $\{1,2,3\}$, reading in the clockwise order from the bottom. Also, let  $\sigma_v$, $\sigma'_v$, $\sigma_v^{''}$ denote the three reflections (mirror plane on ammonia) as marked.
+	\begin{center} \includegraphics[width=2in]{img31} 
+ \includegraphics[width=3in]{img32}  \end{center} 
+ we take the $C_3^+$ and $C_3^-$ to be the clockwise and anti-clockwise rotation of the ammonia molecule, which will make it easy for us to differentiate the effect of the symmetry operations.
+ 
+With these markings, all possible effects of the six possible operations can be seen in the diagram below \begin{enumerate}
+	\item $C_3 =$ rotation of $0^o$ (no change in position, also called E-identity)
+	%diagram
+	\item $C_3 =$ clockwise rotation by $120^o$
+	%diagram
+	\item $C_3 =$ counter clockwise rotation of $120^o$
+	%diagram
+	\item $\sigma_v=$ reflection in the  vertical plane (1)
+	%diagram
+		\item $\sigma'_v=$ reflection in the  vertical plane (2)
+	%diagram
+		\item $\sigma_v^{''}=$ reflection in the  vertical plane (3)
+			%diagram
+\end{enumerate}
+ Therefore, the six possible permutations of the three hydrogen atoms has been accounted for. Also, we can see that every symmetry operation is equal to one of the six listed in the figures above. Suppose that  a $C_3^+$ rotation is applied followed by a $\sigma_v$ reflection, this give rise to $\sigma'_v$ . This observation suggests that composition of two symmetry operations is possible to obtain a single symmetry operation . With this, we write that 
+ $$\sigma_v C_3^+=\sigma'_v$$
+ The six operations together with the composition operation forms a \break symmetry group of order 6. The complete group multiplication table for $C_{3v}$ using the  symmetry operations as defined is shown in the cayley's table below using the   operation(sequence)
+ \begin{table}[H]\centering
+ \begin{tabular}{c|cccccc}
+ 	$C_{3v}$&E&$C_3^+$&$C_3^-$&$\sigma_v$&$\sigma'_v$&$\sigma_v^{''}$\\\hline
+ E&E&$C_3^+$&$C_3^-$&$\sigma_v$&$\sigma'_v$&$\sigma_v^{''}$\\
+ $C_3^+$&$C_3^+$&$C_3^-$&E&$\sigma'_v$&$\sigma_v^{''}$&$\sigma_v$\\
+ $C_3^-$&$C_3^-$&E&$C_3^+$&$\sigma_v^{''}$&$\sigma_v$&$\sigma'_v$\\
+ $\sigma_v$& $\sigma_v$&$\sigma_v^{''}$&$\sigma_v$&E&$C_3^-$&$C_3^+$\\
+ $\sigma'_v$& $\sigma'_v$&$\sigma_v$&$\sigma_v^{''}$&$C_3^+$&E&$C_3^-$\\
+ $\sigma_v^{''}$& $\sigma_v^{''}$& $\sigma'_v$&$\sigma_v$&$C_3^-$&$C_3^+$&E 
+ \end{tabular}\end{table}
+
+Following from the table, $C_{3v}$ is indeed a group.
+\begin{rmk} The $C_{3v}$  point group corresponds to $S_3$ symmetric group \\
+	Observe that $AB\neq\,BA\hspace{0.5cm} \forall A,B\in C_{3v}$ in general for $C_{3v}$, therefore the $C_{3v}$ group is not abelian
+\end{rmk}
+
+\section{MATRIX REPRESENTATIVES}
+Transformation matrices denoted by $\Gamma(g)$ for each symmetry element can be used to carry out various symmetry operations of $C_{3v}$  point group. Each individual matrix is called a representative of the corresponding symmetry operation and the complete set of matrices is called a matrix representation of the group. The matrix representatives acts on some chosen basis set of functions  and the actual matrices making up a given representation is said to span the chosen basis . The sets of atomic orbitals of $NH_3$ will be used as basis functions for matrix representations. The matrix representations satisfy the conditions for group. So, a set of quantities which obeys the group multiplication table is called a representation of the group.
+
+Choosing a basis $(s_N,s_1,s_2,s_3)$ that consists of the valence $s$ orbitals on the nitrogen and the three hydrogen atoms. We need to consider what happens to this basis when it is acted on by each of the symmetry operations in
+the $C_{3v}$ point group, and determine the matrices that would be required to produce the same effect. The effects of the symmetry operations on the chosen basis are as follows.
+
+ \begin{table}[H]\centering
+	\begin{tabular}{cc c c}
+$E$&$(s_N,s_1,s_2,s_3)$&$\longrightarrow$&$(s_N,s_1,s_2,s_3)$\\
+$C_3^+$&$(s_N,s_1,s_2,s_3)$&$\longrightarrow$&$(s_N,s_3,s_1,s_2)$\\
+$C_3^-$&$(s_N,s_1,s_2,s_3)$&$\longrightarrow$&$(s_N,s_2,s_3,s_1)$\\
+$\sigma_v$&$(s_N,s_1,s_2,s_3)$&$\longrightarrow$&$(s_N,s_1,s_3,s_2)$\\
+$\sigma'_v$&$(s_N,s_1,s_2,s_3)$&$\longrightarrow$&$(s_N,s_3,s_2,s_1)$\\
+$\sigma_v^{''}$&$(s_N,s_1,s_2,s_3)$&$\longrightarrow$&$(s_N,s_2,s_1,s_3)$
+\end{tabular}\end{table}
+
+The matrices that carry out the same transformations are:
+\begin{itemize}
+	\item[i.] $\Gamma(E)$ \hspace{0.5cm}$(s_N,s_1,s_2,s_3) \begin{pmatrix}
+	1&0&0&0\\0&1&0&0\\0&0&1&0\\0&0&0&1\end{pmatrix}=(s_N,s_1,s_2,s_3)$
+		\item[ii.] $\Gamma(C_3^+)$ \hspace{0.5cm}$(s_N,s_1,s_2,s_3) \begin{pmatrix}
+	1&0&0&0\\0&0&1&0\\0&0&0&1\\0&1&0&0\end{pmatrix}=(s_N,s_3,s_1,s_2)$
+	\item[iii.] $\Gamma(C_3^-)$ \hspace{0.5cm}$(s_N,s_1,s_2,s_3) \begin{pmatrix}
+	1&0&0&0\\0&0&0&1\\0&1&0&0\\0&0&1&0\end{pmatrix}=(s_N,s_2,s_3,s_1)$
+	\item[iv.] $\Gamma(\sigma_v)$ \hspace{0.5cm}$(s_N,s_1,s_2,s_3) \begin{pmatrix}
+	1&0&0&0\\0&1&0&0\\0&0&0&1\\0&0&1&0\end{pmatrix}=(s_N,s_1,s_3,s_2)$
+		\item[v.] $\Gamma(\sigma'_v)$ \hspace{0.5cm}$(s_N,s_1,s_2,s_3) \begin{pmatrix}
+	1&0&0&0\\0&0&0&1\\0&0&1&0\\0&1&0&0\end{pmatrix}=(s_N,s_3,s_2,s_1)$
+	
+		\item[vi.] $\Gamma(\sigma_v^{''})$ 		\hspace{0.5cm}$(s_N,s_1,s_2,s_3) \begin{pmatrix}
+	1&0&0&0\\0&0&1&0\\0&1&0&0\\0&0&0&1\end{pmatrix}=(s_N,s_2,s_1,s_3)$
+\end{itemize}
+The six matrices above therefore forms a representation for the $C_{3v}$ point group in the $(s_N,s_1,s_2,s_3)$ basis. They multiply together accoding to the group \linebreak multiplication table (cayleys representation table) and satisfy all the requirement for a mathematical group.
+
+\begin{rmk}
+It is important that the basis vectors are row vectors.\break  Otherwise, if written as column vectors, the corresponding matrices will be the transpose of the matrices above and it will not reproduce the group \break multiplication table.
+\end{rmk}
+
+The matrix representation has the following interesting properties
+\begin{itemize}
+	\item  Similarity transform
+	\item Characters of representation
+\end{itemize}
+\subsection*{Similarity Transform}
+Suppose the basis set $(s_1,s_2,\cdots\,s_n)$ ia s basis for a point group and its \break matrix representation have been determined. Another set $(s'_1,s'_2,\cdots\,s'_n)$ can be chosen to be the set of linear combinations of the original basis set \break (provided the combinations were linearly independent). The two matrix \break representations for the two basis sets will be different but will be related by a similarity transform.\\ Considering a basis set $(s'_1,s'_2,\cdots\,s'_n)$ in which each basis $s'_1$ is a linear \break combination of the original basis $(s_1,s_2,\cdots\,s_n)$ 
+\begin{equation}s'_j=\sum_{i=1}^{n}s_ic_{ji}=s_1c_{i1}+s_2c_{i2}+\cdots+s_nc_{in}\end{equation}
+where the $c_{ji}$ in the sum are coefficients multiplying the original basis function $s_i$ in the new linear combination basis function $s'_j$. It can be represent in terms of a matrix equation \begin{equation}\label{c}S'= SC\end{equation}
+
+$$(s'_1,s'_2,\cdots\,s'_n)=(s_1,s_2,\cdots\,s_n)\begin{pmatrix}
+c_{11}&c_{12}&\cdots&c_{1n}\\c_{21}&c_{22}&\cdots&c_{2n}\\\vdots&\vdots&\cdots&\vdots\\c_{n1}&c_{n2}&\cdots&c_{nn}\end{pmatrix}$$
+ If symmetry operation $g$ is applied to the two basis sets, we see that the  matrix representatives $\Gamma(g)$ and $\Gamma'(g)$ of the symmetry operation in the S and S’ are related by similarity transform \\
+ From \ref{c}, 
+ \begin{align*}S'&= SC\\
+ g(S)&=S\Gamma(g)\\
+  g(S')&=S'\Gamma'(g)\\
+   g(SC)&=SC\Gamma'(g) \\\
+% post multiply by C^{-1}\\
+ \implies\,g(S)&=SC\Gamma'(g)C^{-1}\\
+  &=S\Gamma(g)\\
+  \therefore\Gamma(g)&=C\Gamma'(g)C^{-1}
+  \end{align*}
+\begin{rmk} The similarity transform depends only on the matrix of \break coefficients used to transform the basis functions.
+	\end{rmk}
+
+\subsection*{Characters of representation}
+The trace of a matrix representation $\Gamma(g)$, denoted as $\chi$ is referred to as the \linebreak character of the representation under the symmetry operation $g$. It is the sum of the elements along the main diagonal i.e 
+$$\chi(M)=\sum_k\,M_{kk}$$
+\begin{itemize}
+\item[1.] The character of a symmetry operation is invariant under a similarity \linebreak transform
+\item[2.] Symmetry operations belonging to the same class have the same \break character in a given representation. \end{itemize}
+
+\textbf{proof:} From the property of trace of  matrix products that the traces are \linebreak invariant under cyclic permutation of matrices i.e
+$$tr[ABC]=tr[BCA]=tr[CAB]$$ Then, for the character of a matrix representative of a symmetry operation $g$, we have 
+$$\chi(g)=tr[\Gamma(g)]=tr[C\Gamma'(g)C^{-1}]=tr[\Gamma'(g)CC^{-1}]=tr[CC^{-1}\Gamma'(g)]=tr[\Gamma'(g)]=\chi'(g)$$
+Therefore, the trace of the similarity transformed representative is therefore the same as the trace of the original representative.
+
+The condition for two symmetry operations $g$ and $g'$ to be in the same class is that there must be some symmetry operation $h$ of the group such that $$g’=h^{-1}gh \hspace{0.05cm}\mbox{(i.e the elements $g$ and $g'$ are  conjugate)}.$$ Now, considering 
+the characters of $g$ and $g'$ we have
+$$\chi(g')=tr[\Gamma'(g)]=tr[\Gamma^{-1}(h)\Gamma(g)\Gamma(h)]=tr[\Gamma(g)\Gamma(h)\Gamma^{-1}(h)]=tr[\Gamma(g)]=\chi(g)$$
+Therefore, the characters of $g$ and $g'$ are identical or the same.
+
+To determine the vibrational mode of ammonia molecule, its irreducible \linebreak representation (irrep) and character table must be known.\\ To get the irreps, we must get the reducible representations.
+\begin{defn}\textbf{Reduced representation}\\
+	This is the representation of the the original representation into  representation of lower dimensionality. The lower dimensionality  representations are called the reduced representations1 which also satisfy the same conditions for a matrix representation.
+\end{defn}
+\begin{rmk}
+	For a matrix representation to be reducible, it must be in block diagonal form.
+\end{rmk}
+\begin{defn}\textbf{Irreducible Representation}\\
+	A representation is an irreducible representation (irreps) if there is no  similarity transform that can simultaneously convert all of the  representations into a block diagonal form.
+\end{defn}
+\begin{defn}\textbf{Block diagonal matrix}\\
+	A square matrix is said to be a block diagonal if all the element are zero except for a set of submatrices lying along the diagonal
+\end{defn}
+\begin{defn} \textbf{Direct sum}\\
+	A direct sum of two matrices of order $n$ and $m$ is performed by placing the matrices to be summed along the diagonal of a matrix of order $n\times\,m$ and filling the remaining elements with zero(s).
+\end{defn} 
+\begin{defn}\textbf{Symmetry Adapted Linear Combination (SALC)}\\
+	The linear combination of basis functions that converts a matrix  representation into a block diagonal form, allowing reduction of the  representation is called a symmetry adapted linear combination.
+\end{defn}
+\begin{defn}\textbf{Symmetric matrix}\\
+	A matrix is said to be symmetric if it equal to its transpose.\end{defn}
+\begin{defn}\textbf{Symmetry species}\\
+	Let $S$ and $\bar{S}$ be two irreps that are identical. Then, they have same symmetry and transform in the same way under all of the symmetry operations of the point group and thereby forming basis for the same matrix representation. Therefore, they are said to belong to the same symmetry species. 
+\end{defn}
+\begin{rmk}\begin{itemize}
+		\item[1.]
+		A block diagonal matrix can be written as the direct sum of the matrices that lie along the diagonal
+		
+		\item [2.]  The number of irreducible representations of a group is equal to the \break number of classes. Operations of a group, giving rise to a limited \break number of symmetry species.
+		\item[3.] There are limited number of ways in which an arbitrary function can \linebreak transform under the symmetry. 
+		\item[4.] Any function that forms a basis for a
+		matrix representation of a group must transform as one of the symmetry species of the group.\end{itemize}
+\end{rmk}
+
+The irreps of a point group are labelled according to their symmetry species as follows:
+\begin{itemize}
+\item[(i)] 1D representations are labelled A or B, depending on whether they are \linebreak symmetric (character +1) or antisymmetric (character –1) under \break rotation about the principal axis.
+\item[(ii)]  2D representations are labelled E, 3D representations are labelled T.
+\item[(ii)]  In groups containing a centre of inversion, g and u labels (from the German gerade and ungerade, meaning
+symmetric and antisymmetric) denote the character of the irrep under inversion (+1 for g, -1 for u)
+\item[(iv)]  In groups with a horizontal mirror plane but no centre of inversion, the irreps are given prime and double
+prime labels to denote whether they are symmetric (character +1) or antisymmetric (character –1) under
+reflection in the plane.
+\item[(v)]  If further distinction between irreps is required, subscripts 1 and 2 are used to denote the character with
+respect to a $C_2$ rotation perpendicular to the principal axis, or with respect to a vertical reflection if there
+are no $C_2$ 1 rotations.\end{itemize}
+
+The most important point to understand is that every function \break transforms as one of the irreps of a point group.
+In the case of one-dimensional irreps there is a one-to-one correspondence between the function and its \break irrep. In
+the case of two-dimensional irreps, a pair of degenerate functions will transform jointly as the 2D irrep, and so
+on. The same function may transform as a different irrep in different point groups. 
+
+\section{CHARACTER TABLES}
+	A character table summarises the behaviour of all of the possible irreps of a group under each of the symmetry
+	operations of the group. To get the character table for ammonia, its irreps which must be known
+are computed below.\\
+To start with , the matrices of the $C_{3v}$ representation as derived earlier are given by:
+\begin{table}[H]
+\begin{tabular}{ccc}$\Gamma(E)$ & $\Gamma(C_3^+)$ & $\Gamma(C_3^-)$ \\
+$\begin{pmatrix}
+1&0&0&0\\0&1&0&0\\0&0&1&0\\0&0&0&1\end{pmatrix}$&$\begin{pmatrix}
+1&0&0&0\\0&0&1&0\\0&0&0&1\\0&1&0&0\end{pmatrix}$&$\begin{pmatrix}
+1&0&0&0\\0&0&0&1\\0&1&0&0\\0&0&1&0\end{pmatrix} $\\\linebreak[5cm]$ \Gamma(\sigma_v)$&$ \Gamma(\sigma'_v)$&$ \Gamma(\sigma_v^{''})$\\
+$ \begin{pmatrix}
+1&0&0&0\\0&1&0&0\\0&0&0&1\\0&0&1&0\end{pmatrix}
+$&$\begin{pmatrix}
+1&0&0&0\\0&0&0&1\\0&0&1&0\\0&1&0&0\end{pmatrix}
+$&$ \begin{pmatrix}
+1&0&0&0\\0&0&1&0\\0&1&0&0\\0&0&0&1\end{pmatrix}$\end{tabular}\end{table}
+
+The matrices above all take the same block diagonal form and each of the matrix representatives $\Gamma(g)$ can be written as the direct sum of a $1\times1$ matrix and a $3\times3$ matrix. i.e
+$$\Gamma^{(4)}(g)=\Gamma^{(1)}(g)\oplus\Gamma^{(3)}(g)$$
+Where the bracketed subscripts are the dimensions of the matrices. 
+
+Recall that
+the basis for the original four-dimensional representation had the $s$ orbitals $(s_N,s_1,s_2,s_3)$ of ammonia as its basis.
+The first set of reduced matrices, $\Gamma^{(1)}(g)$, forms a one-dimensional representation with $(s_N)$ as its basis. The
+second set,	$\Gamma^{(3)}(g)$ forms a three-dimensional representation with the basis $(s_1,s_2,s_3)$. So, the two sets of matrices $\Gamma^{(1)}(g)$ and $\Gamma^{(3)}(g)$ are the reduced representations which also satisfy the requirement  for a matrix representation. 
+\begin{table}[H]
+\begin{tabular}{cccc}$g$&$\Gamma(E)$ & $\Gamma(C_3^+)$ & 
+	$\Gamma(C_3^-)$ \\
+	$\Gamma^{(1)}(g)$&$(1)$&$(1)$&$(1)$\\	$\Gamma^{(3)}(g)$&$\begin{pmatrix}
+	1&0&0\\0&1&0\\0&0&1\\\end{pmatrix}$&$\begin{pmatrix}
+	0&1&0\\0&0&1\\1&0&0\end{pmatrix}$&$\begin{pmatrix}
+0&0&1\\1&0&0\\0&1&0\end{pmatrix}$\\\linebreak[5cm]$g$&$ \Gamma(\sigma_v)$& $\Gamma(\sigma'_v)$&$ \Gamma(\sigma_v^{''})$\\	$\Gamma^{(1)}(g)$&$(1)$&$(1)$&$(1)$\\
+		$\Gamma^{(3)}(g)$&$\begin{pmatrix}
+	1&0&0\\0&0&1\\0&1&0\end{pmatrix}
+	$&$\begin{pmatrix}
+	0&0&1\\0&1&0\\1&0&0\end{pmatrix}
+	$&$ \begin{pmatrix}
+	0&1&0\\1&0&0\\0&0&1\end{pmatrix}$
+\end{tabular}\end{table}
+
+The $\Gamma^{(1)}(g)$ and $\Gamma^{(3)}(g)$ represent the 1D representation spanned by $s_N$ and 3D representation spanned by $(s_1, s_2, s_3)$ respectively.
+
+ Next, we check whether the three dimensional representation $\Gamma^{(3)}(g)$  can be reduced. Since all the matrix representations are not in block diagonal form, except the matrices representing $E$ and $\sigma_v$, so it is not in a reducible form. However, we can carry out a similarity transformation to a new \break representation spanned by a new set of basis functions (made up of linear combinations of $(s_1, s_2, s_3)$), which will make it reducible. Then, using the appropriate (normalized) linear combinations gives the new basis functions as:
+$$s'_1=\frac{1}{\sqrt{3}}(s_1+s_2+s_3)\hspace{0.5cm}s'_2=\frac{1}{\sqrt{6}}(2s_1-s_2-s_3)\hspace{0.5cm}s'_3=\frac{1}{\sqrt{2}}(s_2-s_3)$$
+and in a matrix form:\\
+ $$(s'_1, s'_1, s'_3)=(s_1, s_2, s_3)\begin{pmatrix}
+ \frac{1}{\sqrt{3}}&\frac{2}{\sqrt{6}}&0\\\frac{1}{\sqrt{3}}&-\frac{1}{\sqrt{6}}&\frac{1}{\sqrt{2}}\\\frac{1}{\sqrt{3}}&-\frac{1}{\sqrt{6}}&\frac{1}{\sqrt{2}}\end{pmatrix}$$
+ The new matrix representations are then formed $$\Gamma'(g)=C^{-1}\Gamma\,C$$
+ \begin{table}[H]
+ 	\begin{tabular}{ccc}$\Gamma(E)$ & $\Gamma(C_3^+)$ & 
+ 		$\Gamma(C_3^-)$ \\
+ 			$\begin{pmatrix}
+ 		1&0&0\\0&1&0\\0&0&1\\\end{pmatrix}$&$\begin{pmatrix}
+ 	1&0&0\\0&-\frac{1}{2}&\frac{\sqrt{3}}{2}\\0&-{\frac{\sqrt{3}}{2}}&-\frac{1}{2}\end{pmatrix}$&$\begin{pmatrix}
+ 		1&0&0\\0&-\frac{1}{2}&-\frac{\sqrt{3}}{2}\\0&\frac{\sqrt{3}}{2}&-\frac{1}{2}\end{pmatrix}$\\\linebreak[5cm]$ \Gamma(\sigma_v)$& $\Gamma(\sigma'_v)$&$ \Gamma(\sigma_v^{''})$\\	$\begin{pmatrix}
+ 		1&0&0\\0&1&0\\0&0&-1\end{pmatrix}
+ 		$&$\begin{pmatrix}
+ 		1&0&0\\0&-\frac{1}{2}&-\frac{\sqrt{3}}{2}\\0&-{\frac{\sqrt{3}}{2}}&\frac{1}{2}\end{pmatrix}
+ 		$&$ \begin{pmatrix}
+ 		1&0&0\\0&-\frac{1}{2}&\frac{\sqrt{3}}{2}\\0&{\frac{\sqrt{3}}{2}}&\frac{1}{2}\end{pmatrix}$
+ \end{tabular}\end{table}
+ Now, each matrix are now in block diagonal form and it can be reduced into the direct sum of a $1\times1$ matrix representation spanned by $s'_1$ and a $2\times2$ representation spanned $(s'_2, s'_3)$. So, the complete set of reduced representation from the 4D is given by :
+ 
+ \begin{table}[H]
+ 	\begin{tabular}{cccc}$\Gamma(E)$ & $\Gamma(C_3^+)$ & 
+ 		$\Gamma(C_3^-)$ &\\
+ 		$(1)$&$(1)$&$(1)$&1D representation spanned by $(s_N)$\\$(1)$&$(1)$&$(1)$&1D representation spanned by $(s'_1)$ \\	$\begin{pmatrix}
+ 		1&0&\\0&1&\\\end{pmatrix}$&$\begin{pmatrix}
+ 		-\frac{1}{2}&\frac{\sqrt{3}}{2}\\-{\frac{\sqrt{3}}{2}}&-\frac{1}{2}\end{pmatrix}$&$\begin{pmatrix}
+ 		-\frac{1}{2}&-\frac{\sqrt{3}}{2}\\\frac{\sqrt{3}}{2}&-\frac{1}{2}\end{pmatrix}$&2D representation spanned by $(s'_2, s'_3)$\\\linebreak[5cm]$ \Gamma(\sigma_v)$& $\Gamma(\sigma'_v)$&$ \Gamma(\sigma_v^{''})$&\\	$(1)$&$(1)$&$(1)$&1D representation spanned by $(s_N)$\\
+ 		$(1)$&$(1)$&$(1)$&1D representation spanned by $(s'_1)$\\
+ $\begin{pmatrix}
+ 1&0\\0&-1\end{pmatrix}
+ $&$\begin{pmatrix}
+ -\frac{1}{2}&-\frac{\sqrt{3}}{2}\\-{\frac{\sqrt{3}}{2}}&\frac{1}{2}\end{pmatrix}
+ $&$ \begin{pmatrix}
+ -\frac{1}{2}&\frac{\sqrt{3}}{2}\\{\frac{\sqrt{3}}{2}}&\frac{1}{2}\end{pmatrix}$
+ &2D representation spanned by $(s'_2, s'_3)$
+ \end{tabular}\end{table}
+ This is as far as we can go in reducing this representation. None of the three representations above can be
+ reduced any further, therefore they are the irreducible representations (irreps), of the  point group.\\
+ The first 1D irrep in the $C_{3v}$ point group is symmetric with character(+1) under all the symmetry operations of the group. Therefore, it belongs to the symmetry species $A_1$. The second 1D irrep has character 1 under the identity operation and rotations but $-1$ under reflection and we named it $A_2$. The 2D irrep has character 2 under the identity operation , $-1$ under rotation and $0$ under reflection, therefore it belongs to the group E.\\
+ The symmetry operations are grouped into classes in the character table and not listed separately because operations in the same class have the same character. Therefore, we have the symmetry operations  $E$, $2C_3$ and $3\sigma_v$ for the identity, the two rotatations and the three reflections respectively.The final column of the table lists a number of functions that transform as the various irreps of the
+ group; these are the Cartesian axes $(x,y,z)$ and the rotations $(R_x,R_y,R_z)$.
+ Thus the character table of the $C_{3v}$ point group is given by:
+ 
+ \begin{table}[H]\centering\caption{ $C_{3v}$ CHARACTER TABLE}\begin{tabular}{|c|ccc|c|}\hline
+ 		$C_{3v}$&$E$&$2C_3$&$3\sigma_v$&h=6 \\\hline
+ 		$A_1$&1&1&1&z\\
+ 		$A_2$&1&1&$-1$&$R_z$\\
+ 		$E$&2&$-1$&0&$(x,y)$, $(R_x,R_y)$\\\hline
+ 	\end{tabular}\end{table} 
+ \begin{rmk} The molecular orbitals of ammonia can be can be constructed using the character table above.\end{rmk}
+ \section{MOLECULAR VIBRATION}
+ A diatomic molecule has only a single bond that can vibrate; therefore it has a single vibrational mode. The vibrational motions  of polyatomic molecules in which ammonia belong to are much more complicated than those in a diatomic. Firstly, there are more bonds that can vibrate; secondly, in \break addition to stretching vibrations which is the only type of vibration \break possible in a diatomic, there is the bending and torsional vibrational modes. Since changing one bond length in a polyatomic will often affect the length of nearby bonds, the vibrational motion of each bond can not be considered in isolation; therefore the normal modes involving the concerted motion of groups of bonds will be discussed.
+ 
+ Once the symmetry of a molecule at its equilibrium structure is known, then its vibrational motion can be predicted by group theory.\\Each vibrational mode transforms as one of the irreps of the molecule’s point group. 
+ The following processes will be followed in determining the number of vibrational modes in a molecule.
+ \subsection{Determinining the number of normal vibrational modes (molecular degrees of freedom )}
+ An atom can undergo only translational motion, and therefore has three \break degrees of freedom corresponding to motion along the $x$, $y$, and $z$ Cartesian axes.  Translational motion in any arbitrary direction can always be expressed in terms of components along these three axes. When atoms combine to form molecules, each atom still has three degrees of freedom, so the molecule as a whole has $3N$ degrees of freedom, where $N$ is the number of atoms in the molecule.\\However, the fact that each atom in a molecule is bonded to one or more \linebreak neighbouring atoms severely hinders its translational motion, and also ties its motion to that of the atoms to which it is
+ attached. And for these reasons, the motions of the molecule as a whole will be discussed, even though it is possible to describe the molecular motion of each individual atoms in terms of translational motion. The motions of a molecule as a whole can now be divided into three types  namely: translational; rotational and vibrational.
+ 
+ Just as for an individual atom, molecule as a whole has three degrees of translational freedom, leaving 3N-3 degrees of freedom in rotation and vibration.
+ 
+ The number of rotational degrees of freedom depends on the structure of the molecule. In general, there are three possible rotational degrees of \break freedom,  corresponding to rotation about the $x$, $y$ and $z$ Cartesian axes. A non-linear  polyatomic molecule does indeed have three rotational degrees of freedom, leaving $3N-6$  degrees of freedom in vibration (i.e $3N-6$ vibrational modes). It is generally accepted that a motion must change the position of one or more of the atoms, to be classified as a true rotation. If we define the $z$-axis as the molecular axis in a linear molecule, spinning the molecule about the axis does not move any of the atoms from their original position, so this motion is not truly a  rotation. Consequently, a linear molecule has only two degrees of rotational  freedom, corresponding to rotations about the $x$ and $y$ axis, and  the molecule therefore has $3N-5$ degrees of freedom left for vibration, or $3N-5$ vibrational modes.
+
+\textbf{Since ammonia belong to non-linear polyatomic molecule, it thereby has $3N-6$ freedom in vibration.}
+\subsection{Determining the symmetries of molecular \break motions}
+As we have established, the motions of a molecule may be described in terms of the motions of each atom along the $x$,$y$ and $z$ axis. Consequently, a very useful basis for describing molecular motions comprises a set of $(x, y, z)$ axes centred on each atom, and they are known as the $3N$ Cartesian basis (since there are 3N Cartesian axes, $3$ axes for each of the $N$ atoms in the molecule). \\
+ The first task in investigating motions of a particular molecule is to determine the characters of the matrix representatives for the $3N$ Cartesian basis under each of the symmetry operations in the molecular point group.
+ 
+ Now, concerning Ammmonia ($NH_3$) molecule, which has a $C_{3v}$ \break symmetry, the following steps will be used to determine its vibrational modes.\\\begin{itemize}
+ 	\item[I] The irreps spanned by the motions of a polyatomic molecule will be \linebreak determined using the 3N Cartesian basis, made up of $x$,$ y$, $z$ axes on each atom. The characters of the matrix representatives are to be determined by constructing a table with:
+ \begin{itemize}\item Operation: List of the symmetry operations in the point group
+ 	\item 	Nunshifted atoms: List of the number of atoms in the molecule that are unshifted by each symmetry operation
+ 	\item $\Gamma_{cart}$: List of the characters for each operation (trace of the $3\times3$ matrix)
+ 	\item $\Gamma_{3N}$ :Take the product of the previous two rows to give the \break characters for $\Gamma_{3N}$.\end{itemize}
+ \item[II] The irreps spanned by the molecular vibrations are determined by first subtracting the characters for
+ 	rotations and translations from the \break characters for $\Gamma_{3N}$ to give the characters for $\Gamma_{vib}$ and then using the 	reduction formula or inspection of the character table to identify the irreps contributing to $\Gamma_{vib}$.
+ 	i.e  $$\Gamma_{vib}=\Gamma_{3N}-(\Gamma_{trans}+\Gamma_{rot})$$
+ 	 to get the vibrational modes.
+ 	Reduction formula is given by
+ 	$$n_i=\frac{1}{h}\sum\chi_r\chi_{irr}n_c$$ where $h$ is the order of the group\\$\chi_r$ is the character of the reducible representation\\$\chi_{irr}$ is the character of irreducible representation\\ $n_i$ is the number of irreps\\and  $n_c$ is the number of operation $c$ in each class
+ 	
+ \item[III] To find out which of the bonds have stretching vibrations and bending \linebreak vibrations, we will apply the reduction formulaon unshifted bonds to get the stretching modes, and then subtract the stretching modes to get the bending modes. \end{itemize}
+ %$\Gamma_{3N}$=Nunshifted atoms(\pm +2cos\theta)
+ 
+ $NH_3$ has four atoms, so the $3N$ cartesian basis will have 12 elements. Therefore, following the processes above, we have:
+ 
+ \textbf{STEP I:}\\
+  \begin{table}[H]\centering\begin{tabular}{|c|c|c|c|}\hline
+ 		$C_{3v}$&$E$&$2C_3$&$3\sigma_v$\\\hline
+ 		Nunshifted atoms&4&1&2\\\hline
+ 		$\Gamma_{cart}$&3&0&$1$\\\hline
+ 		$\Gamma_{3N}$&12&$0$&2\\\hline
+ \end{tabular}\end{table} 
+ we therefore use the reduction formula to get the number of times each \linebreak irreducible representation appears in $\Gamma_{3N}$ of $NH_3$.
+ 	$$n_i=\frac{1}{h}\sum\chi_r\chi_{irr}n_c$$
+ 	 $h=6$, $n_c=$ 1 for $E$, 2 for $C_3$  and 3 for $\sigma_v$\\
+ 	 we use the character table which was gotten earlier for the $\chi_{irr}$ \\Therefore,
+ $$n_{A_1}=\frac{1}{6}[(12\cdot1\cdot1)+(0\cdot1\cdot2)+(2\cdot1\cdot3)]=3$$
+  $$n_{A_2}=\frac{1}{6}[(12\cdot1\cdot1)+(0\cdot1\cdot2)+(2\cdot-1\cdot3)]=1$$
+  $$n_E=\frac{1}{6}[(12\cdot2\cdot1)+(0\cdot1\cdot2)+(2\cdot0\cdot3)]=4$$
+ 
+ Therefore, $$\Gamma_{3N}=3A_1+A_2+4E$$
+  
+ which shows that the $3N$ cartesian has 12 irreducible representations.\\
+ 
+ \textbf{STEP II:}\\
+ Since every non-linear molecule has $3N-6$ vibrations and ammonia belongs here, where $N$ is the number of atoms.
+Then, 
+ \begin{equation}\label{d}\Gamma_{vib}=\Gamma_{3N}-(\Gamma_{trans}+\Gamma_{rot})\end{equation}
+ 
+ From the character table, 
+ \begin{itemize}
+ 	\item Translation along an axis $\implies\,x,y,z\implies\, E, A_1$
+ 	\item Rotation $\implies\,R_x,R_y,R_z\implies\,E, A_2$
+ \end{itemize}
+ Six of the irreducible representation corresponds to the translation and \break rotation of the molecule.\\
+ Therefore, using \ref{d} gives:
+\begin{align*}\Gamma_{vib}&=\Gamma_{3N}-(\Gamma_{trans}+\Gamma_{rot})\\ &=(3A_1+A_2+4E)-(A_1+E+A_2+E)\\
+&=2A_1+2E
+ \end{align*}
+Since $E$ representation corresponds to a doubly degenerate state,we have that :
+$2A_1 \implies$ two energy states and \\
+$2E \implies $ four energy states\\
+  and $$3N-6=3(4)-6=6\hspace{0.07cm} \text{vibrational modes}$$
+  Therefore, $NH_3$ has 6 vibrational modes.\\
+  
+ \textbf{STEP III:}\\
+ The last thing to do is to find out which of the bonds have stretching \break vibrations and bending vibrations.  We therefore compute the table below to see the number of unshifted bonds
+ \begin{table}[H]\centering\begin{tabular}{|c|c|c|c|}\hline
+ 		$C_{3v}$&$E$&$2C_3$&$3\sigma_v$\\\hline
+ 		No of unshifted bonds&3&0&1\\\hline
+ \end{tabular}\end{table} 
+ Next, we use the reduction formula to get the stretching modes of $NH_3$.
+ $$n_i=\frac{1}{h}\sum\chi_r\chi_{irr}n_c$$
+ $h=6$, $n_c=$ 1 for $E$, 2 for $C_3$  and 3 for $\sigma_v$\\
+ we use the character table which was gotten earlier for the $\chi_{irr}$ \\Therefore,
+ $$n_{A_1}=\frac{1}{6}[(3\cdot1\cdot1)+(0\cdot1\cdot2)+(1\cdot1\cdot3)]=1$$
+ $$n_{A_2}=\frac{1}{6}[(3\cdot1\cdot1)+(0\cdot1\cdot2)+(1\cdot-1\cdot3)]=0$$
+ $$n_E=\frac{1}{6}[(3\cdot2\cdot1)+(0\cdot1\cdot2)+(1\cdot0\cdot3)]=1$$ 
+Therefore the stretching modes $$\Gamma_{str}= A_1+E$$ and
+\begin{center}The Bending modes=$\Gamma_{vib}-\Gamma_{str}=(2A_1+2E)-(A_1+E)=A_1+E$\end{center}
+  	
+	\chapter{CONCLUSION AND  REFERENCES}
+	\section{CONCLUSION}
+	One of the motivation of this work is to see how well group theory is applicable to our world, even to the simplest thing one can ever imagine. Therefore, this project will help as a background to study and research more on the \break application of group theory in other disciplines especially in sciences like quantum Physics, biology and more on Chemistry.\\
+	Basic concepts of group theory, symmetry groups, molecules and ammonia was introduced in chapter one. In chapter two, review of literature written by authors on the subject and subject related were taken into account.\\Chapter three is an extensive application of group theory in investigating the \linebreak vibrational modes of ammonia,  its symmetry point group and  character table was also gotten using the group theory. 
+	\section{RECOMMENDATIONS} 
+This project work does not really cover all about the application of group \break theory to molecules. The molecular orbitals of a molecule as well as \break determining further whether a molecular vibrational mode of a molecule is infrared active or Raaman active (Polarization) can be computed with the knowledge of this project. Also, more methods can be used to compute the vibrational modes of ammonia apart from the ones used here. I therefore \break recommend that further research and investigation should be done by \break students, Undergraduates and Postgraduates alike on this topic.
+\newpage
+	\addcontentsline{toc}{section}{REFERENCES}
+	\section*{REFERENCES}
+
+Ahmed S. Abdel-Rahman (2019),\textit{Group theory  Character  Table  \break Enhancement  by Introducing  the  Partial  Molecular  Symmetry Principle in the  Molecular  Spectroscopy} , Egypt. J.  Solids, Vol.  (42), (2019/2020) 35 .\\[4mm]
+Brian Soan, \textit{Multiplicative groups in $Z_m$}\\[4mm]
+Claire Vallance,	\textit{Molecular symmetry, group theory, \& applications.}
+\\[4mm]
+Dušan Papoušek (1983), The story of the ammonia molecule: Ten years of investigation of molecular inversion, \textit{Journal of Molecular Structure} 100, \break 179-198, 1983.
+\\[4mm]					
+Jaan Laane, Esther J Ocola (2012), \textit{Applications of symmetry and group \break theory for the investigation of molecular vibrations}, Acta applicandae \break mathematicae 118 (1), 3-24, 2012\\[4mm]
+Jan Smydke, Attila G Csaszar (2021), Understanding the structure of \break complex multidimensional wave functions. A case study of excited \break vibrational states of ammonia. \textit{The journal of Chemical Physics} 154 (14), 144306, 2021.
+\\[4mm]Jayasuriya, Surani Anuradha (2013), \textit{Application of Symmetry Information in Magnetic Resonance Brain Image Segmentation}
+	: \url{https://doi.org/10.25904/1912/1004}
+\\[4mm]
+Jean Brocas (1995), \textit{The use of group theory in the study of non-rigid molecules,	Chemical Group Theory Techniques and Applications.} \break Amsterdam, the Netherlands: Gordon and Breach Science, 117-159, 1995.
+\\[4mm]
+Kuku A.O(1992) \textit{Abstract Algebra.}
+\\[4mm]
+Longuet-Higgins H.C. (1963), \textit{The symmetry groups of non-rigid molecules}, Molecular Physics, 6:5, 445-460, DOI: 10.1080/00268976300100501
+		:\url{https://doi.org/10.1080/00268976300100501}.\\[4mm]
+ Papoušek D, Stone JMR , Špirko V (1973),				Vibration-inversion-rotation \break spectra of ammonia. A vibration-inversion-rotation Hamiltonian for $NH_3$, \textit{Journal of Molecular Spectroscopy} 48 (1), 17-37, 1973.
+\\[4mm]Richard C. Powell (2010),	\textit{Symmetry, Group Theory,and the Physical \break Properties of Crystals}.
+\\[4mm]Rowaida Shaban Emarghni (2011), History of group theory ; \url{http://en.wikipedia.org/wiki/History\_of\_group\_theory}.\\[4mm]
+Sergei N Yurchenko, Miguel Carvajal, Per Jensen*, Hai Lin, Jingjing Zheng, Walter Thiel* (2005), Rotation–vibration motion of pyramidal $XY_3$ molecules described in the Eckart frame: Theory and application to $NH_3$, Molecular Physics 103 (2-3), 359-378, 2005.\\[4mm]Svetoslav Rashev*, Lyubo Tsonev, Dimo Z. Zhechev (2005), Complex \break symmetrized calculations on ammonia	vibrational levels, \textit{Central \break European Journal of Chemistry} 3(3) 2005 556–569.\\[4mm]
+Willem A. de Graaf, Galois Theory
+
+	
+		
+\end{document}
